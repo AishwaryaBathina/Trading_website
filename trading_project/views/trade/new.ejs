@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <form action = '/trade' method = 'POST'>
+        <label for="name">Equipment/Accessory Name:</label>
+        <input type="text" name = "name" id = "name" placeholder="Equipment/Accessory Name" required> <br> <br>
+        <label for="category">Category:</label>
+        <input type="text" name = "category" id = "category" placeholder="Enter Category" required> <br> <br>
+        <br>
+        <label for="description">Description:</label>
+        <textarea  name = "description" rows="5" cols="20" class = "formDescription" id = "description" placeholder="Description" required minlength="35"></textarea> <br> <br>   
+        <label for="quantity">Quantity:</label>
+        <input type="text" name = "quantity" id = "quantity" placeholder="Enter Quantity" required> <br> <br>
+        <label for="image">Image:</label>
+        <textarea  name = "image" rows="3" cols="20" class = "formImage" id = "image" placeholder="Image"></textarea> <br> <br>   
+        <button type="Submit" class = "submitButton">Submit</button>
+     </form>
+    </div>
+    <%- include('../partials/footer.ejs')%>

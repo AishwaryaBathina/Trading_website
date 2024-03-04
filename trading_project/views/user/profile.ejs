@@ -1,0 +1,108 @@
+<%- include('../partials/header.ejs')%>
+<div class="content">
+    <h2>Welcome, <%= user.firstName %> <%= user.lastName %></h2>
+    <% if (stories.length) { %>
+        <p>Trades you have created:</p>
+        <table class="table">
+            <tr>
+                <th>Games and sports</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+            <% stories.forEach(story => { %>
+                <tr>
+                    <td><a href="/trade/<%= story.id %>"><p><%= story.name %></p><%= story.title %></a></td>
+                    <td><%= story.category %></td>
+                    <td>
+                        <form class ="pfform">
+                            <button class="editButton" type="submit" formmethod="GET" formaction="/trade/<%= story.id %>/edit">Edit</button>
+                            <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/<%= story.id %>?_method=DELETE">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } else { %>
+        <p>You haven't created any stories yet.</p>
+    <% } %>
+
+    <% if (watchlist.length) { %>
+        <p>Watching products</p>
+        <table class="table">
+            <tr>
+                <th>Games and sports</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <% watchlist.forEach(item => { %>
+                <tr>
+                    <td><a href="/trade/<%= item.id %>"><p><%= item.name %></p></a></td>
+                    <td><%= item.category %></td>
+                    <td><%= item.status %></td>
+                    <td>
+                        <form class ="pfform">
+                            <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/<%= item.watchId %>/watch/profile?_method=DELETE">Unwatch</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } %>
+
+    <% if (myoffers.length) { %>
+        <p>Offers Made by me:</p>
+        <table class="table">
+            <tr>
+                <th>Product for</th>
+                <th>Product Owner</th>
+                <th>My Product Offered</th>
+                <th>Status</th>
+            </tr>
+            <% myoffers.forEach(item => { %>
+                <tr>
+                    <td><a href="/trade/<%= item.trade %>"><%= item.tradeName %></a></td>
+                    <td><%= item.tradeOwnerName %></td>
+                    <td><a href="/trade/<%= item.offer %>"><%= item.offerName %></a></td>
+                    <td>
+                        <div><%= item.status %></div>
+                        <% if (item.status === 'pending') { %>
+                            <form class ="pfform">
+                                <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/offer/profile/<%= item.id %>/reject">Withdraw offer</button>
+                            </form>
+                        <% } %>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } %>
+
+    <% if (receivedOffers.length) { %>
+        <p>Offers Received from others:</p>
+        <table class="table">
+            <tr>
+                <th>My Product</th>
+                <th>Offered By</th>
+                <th>Product Offered</th>
+                <th>Status</th>
+            </tr>
+            <% receivedOffers.forEach(item => { %>
+                <tr>
+                    <td><a href="/trade/<%= item.trade %>"><%= item.tradeName %></a></td>
+                    <td><%= item.userName %></td>
+                    <td><a href="/trade/<%= item.offer %>"><%= item.offerName %></a></td>
+                    <td>
+                        <div><%= item.status %></div>
+                        <% if (item.status === 'pending') { %>
+                            <form class ="pfform">
+                                <button class="editButton" type="submit" formmethod="POST" formaction="/trade/offer/profile/<%= item.id %>/accept">Accept</button>
+                                <button style="margin-top:5px;" class="deleteButton" type="submit" formmethod="POST" formaction="/trade/offer/profile/<%= item.id %>/reject">Reject</button>
+                            </form>
+                        <% } %>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } %>
+</div>
+<%- include('../partials/footer.ejs')%>

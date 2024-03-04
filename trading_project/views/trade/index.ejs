@@ -1,0 +1,43 @@
+<%- include('../partials/header.ejs') %>
+   <div id="displayFlex">
+      <% if(categories.length){ %>
+         <% categories.forEach(tradecategory=> { %>
+            <div class="card">
+               <div class="container">
+                  <h3 class="listItems">
+                     <%= tradecategory %>
+                  </h3>
+                  <a>
+                     <% if (tradecategory === 'OutDoor Games Equipment') { %>
+                       <img id="outdoorSports" src="https://www.rookieroad.com/img/cricket/cricket-equipment-list.png" alt="outdoorSports">
+                     <% } else if (tradecategory === 'Board Games Equipment') { %>
+                       <img id="boardGames" src="https://previews.123rf.com/images/sudowoodo/sudowoodo1901/sudowoodo190100027/121240623-board-game-pieces-set-in-cute-hand-drawn-cartoon-style-different-markers-playing-cards-and-dice-isol.jpg" alt="boardGames">
+                     <% } else { %>
+                       <img id="defaultImage" src="https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg" alt="Default Image">
+                     <% } %>
+                   </a>
+                   
+                  <ul class="listBullets">
+                     <% if(gamesAndSports.length){ %>
+                        <% gamesAndSports.forEach(trade=>
+                           {
+                           if (trade.category === tradecategory)
+                           { %>
+                           <li >
+                              <a class="listItems" href="/trade/<%= trade.id %>">
+                                 <%= trade.name %>
+                              </a>
+                           </li>
+                           <% } }); } else { %>
+                              <p>There are no trades to display.</p>
+                              <% } %>
+                  </ul>
+               </div>
+            </div>
+
+            <% }); %>
+               <% } else { %>
+                  <h2 class = "NoItems">There are no Equipments to display.</h2>
+                  <% } %>
+   </div>
+<%- include('../partials/footer.ejs') %>

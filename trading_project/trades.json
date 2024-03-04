@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "645d985d5e808e69f07214f1"
+  },
+  "name": "carroms",
+  "category": "Indoor",
+  "description": "Carrom is an indoor game that is typically played on a wooden board with four pockets, similar to a billiards table. The game involves flicking small circular pieces, called carrom men, with the use of a striker. The objective of the game is to pocket all of one's carrom men, as well as the red queen piece, before one's opponent does the same.",
+  "quantity": 2,
+  "image": "https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg",
+  "author": {
+    "$oid": "645d979f5e808e69f07214e9"
+  },
+  "createdAt": {
+    "$date": "2023-05-12T01:37:33.693Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T01:37:33.693Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d98845e808e69f07214f5"
+  },
+  "name": "Chess",
+  "category": "Indoor",
+  "description": "\r\nChess is an indoor board game that is played on a checkered board with 64 squares, with each player controlling 16 pieces. The pieces consist of a king, a queen, two rooks, two knights, two bishops, and eight pawns. The objective of the game is to checkmate the opponent's king, which means to place it under attack in such a way that it cannot escape capture on the next move.",
+  "quantity": 6,
+  "image": "https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg",
+  "author": {
+    "$oid": "645d979f5e808e69f07214e9"
+  },
+  "createdAt": {
+    "$date": "2023-05-12T01:38:12.368Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T01:38:12.368Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d98d05e808e69f07214f9"
+  },
+  "name": "Table Tennis",
+  "category": "Indoor",
+  "description": "\r\nTable tennis, also known as ping pong, is an indoor sport that is played on a table with a net dividing it into two halves. The game involves hitting a small, lightweight ball back and forth across the table using small paddles, with the objective of hitting the ball in such a way that the opponent is unable to return it.",
+  "quantity": 5,
+  "image": "https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg",
+  "author": {
+    "$oid": "645d979f5e808e69f07214e9"
+  },
+  "createdAt": {
+    "$date": "2023-05-12T01:39:28.069Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T01:39:28.069Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d9b035e808e69f0721563"
+  },
+  "name": "Football",
+  "category": "Outdoor Games",
+  "description": "Football (Soccer) - Football, also known as soccer in some countries, is a team sport played with a ball on a rectangular field. The objective of the game is to score goals by kicking the ball into the opponent's net while defending their own net. Each team has 11 players on the field, including a goalkeeper, and the game is played in two halves of 45 minutes each. Football requires a combination of physical fitness, technical skill, and teamwork.",
+  "quantity": 4,
+  "image": "https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg",
+  "author": {
+    "$oid": "645d975f5e808e69f07214e1"
+  },
+  "createdAt": {
+    "$date": "2023-05-12T01:48:51.240Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T01:48:51.240Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d9b3e5e808e69f0721573"
+  },
+  "name": "Basketball",
+  "category": "Outdoor Games",
+  "description": "Basketball - Basketball is a team sport played with a ball on a rectangular court with hoops at each end. The objective of the game is to score points by shooting the ball through the opponent's hoop while defending their own hoop. Each team has five players on the court, and the game is played in four quarters of 12 minutes each. Basketball requires a combination of physical fitness, technical skill, and teamwork.",
+  "quantity": 4,
+  "image": "https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg",
+  "author": {
+    "$oid": "645d975f5e808e69f07214e1"
+  },
+  "createdAt": {
+    "$date": "2023-05-12T01:49:50.013Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T01:49:50.013Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645d9b525e808e69f0721577"
+  },
+  "name": "Frisbee",
+  "category": "Outdoor Games",
+  "description": "Frisbee - Frisbee is a sport played with a flying disc that is thrown between two or more players. The objective of the game is to catch the disc and score points by throwing it to a teammate who is in the opponent's end zone while defending their own end zone. Frisbee can be played as a team sport or individually, and it requires a combination of physical fitness, coordination, and throwing accuracy.",
+  "quantity": 6,
+  "image": "https://7esl.com/wp-content/uploads/2018/01/sports-and-games.jpg",
+  "author": {
+    "$oid": "645d975f5e808e69f07214e1"
+  },
+  "createdAt": {
+    "$date": "2023-05-12T01:50:10.279Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-12T01:50:10.279Z"
+  },
+  "__v": 0
+}]

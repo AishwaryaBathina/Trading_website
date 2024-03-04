@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <div class = "loginContent">
+    <form action = '/users/login' method = 'POST'>
+        <label for="email">Email</label>
+        <input type="text" name = "email" id = "username" placeholder="Enter your username/mailId" required> <br> <br>
+        <label for="password">Password:</label>
+        <input type="password" name = "password" id = "password" placeholder="Enter your password" required> <br> <br>
+        <br>
+        <button type="Submit" class = "loginButton">Login</button>
+     </form>
+     <br><br>
+     <p class = "logintagline">New User? <a href="/users/new">SignUp</a></p>
+    </div>
+    </div>
+    
+<%- include('../partials/footer.ejs')%>

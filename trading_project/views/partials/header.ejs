@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <Title>
+        Games and Sports
+    </Title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <img class="sportslogo"
+                src="https://media.istockphoto.com/id/1284314524/vector/sports-store-on-transparent-background.jpg?s=1024x1024&w=is&k=20&c=kzGVtrP39cg9VcTxKjEkQzqk9q10NawNaKyFeOxUlrI="
+                alt="Play Sports">
+        </a>
+        <hr>
+        <a href="/trade" id="trades"> <span> Catalogue </span></a>
+        <div id="top-buttons">
+            <a href="/trade/new"> Explore! </a>
+            <%if(!user){%>
+            <a href="/users/login"> Login </a>
+            <a href="/users/new"> Signup </a>
+            <%}else{%>
+            <a href="/users/profile"> <span><%= userName %></span> | Profile </a>
+            <a href="/users/logout"> Logout </a>
+            <%}%>
+        </div>
+    </header>
+
+
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
+    
+                    <% if(successMessages.length > 0) {%>
+    
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>

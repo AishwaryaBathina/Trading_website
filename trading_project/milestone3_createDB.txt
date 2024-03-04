@@ -1,0 +1,84 @@
+use gamesandsports;
+db.trades.drop();
+db.trades.insertMany([
+    {
+        id: '1',
+        name: 'Cricket Bats and Balls',
+        category: 'OutDoor Games Equipment',
+        description: 'Our cricket balls are of the highest quality and are suitable for use in both professional and amateur matches. They are durable, well-balanced, and provide excellent accuracy when bowled. We offer cricket balls in different sizes and weights, depending on your preference and playing level. Our balls are carefully crafted to meet the highest standards, ensuring that they are durable, accurate, and long-lasting.',
+        quantity: "4",
+        image:"https://www.rookieroad.com/img/cricket/cricket-equipment-list.png"
+    },
+    {
+        id: '2',
+        name: 'Badminton Rackets',
+        category: 'OutDoor Games Equipment',
+        description: 'Our badminton rackets are of the highest quality, and they are designed to meet the needs of players of all skill levels. They are crafted using premium materials that are durable and long-lasting, ensuring that they can withstand the rigors of intense gameplay. Our rackets come in various sizes, shapes, and weights, depending on your preference and playing style. They have a comfortable grip, allowing for a firm hold and better control over the racket.',
+        quantity:"3",
+        image:"https://www.rookieroad.com/img/cricket/cricket-equipment-list.png"
+    },
+    {
+        id: '3',
+        name: 'Wickets',
+        category: 'OutDoor Games Equipment',
+        description: 'Welcome to our collection of high-quality wickets for sale! We offer a wide range of wickets, perfect for use in cricket games and other outdoor activities. Our wickets are made from durable materials such as wood, plastic, and metal, ensuring they can withstand the wear and tear of regular use. We also offer wickets in a variety of sizes and styles, allowing you to choose the perfect wicket for your needs.',
+        quantity:"4",
+        image:"https://www.rookieroad.com/img/cricket/cricket-equipment-list.png"
+    },
+    {
+        id: '4',
+        name: 'Gloves',
+        category: 'OutDoor Games Equipment',
+        description: 'Our gloves are made from durable materials such as leather, nylon, and polyester, ensuring they can withstand the wear and tear of regular use. We also offer gloves in a variety of sizes and styles, allowing you to choose the perfect glove for your needs. Whether you are a professional athlete looking for a top-quality sports glove, or simply looking for a comfortable and durable gardening glove, our gloves are the perfect choice. They are designed to provide excellent grip and protection, while also being comfortable and easy to wear.',
+        quantity:"5",
+        image:"https://www.rookieroad.com/img/cricket/cricket-equipment-list.png"
+    },
+    {
+        id: '5',
+        name: 'Tennis Balls',
+        category: 'OutDoor Games Equipment',
+        description: 'We offer a wide range of tennis balls, perfect for use in training, competition, or recreational play. Our tennis balls are made from high-quality rubber and are designed to provide excellent bounce and durability, ensuring they can withstand the wear and tear of regular use. We also offer tennis balls in a variety of colors, allowing you to choose the perfect ball for your needs.',
+        quantity:"2",
+        image:"https://www.rookieroad.com/img/cricket/cricket-equipment-list.png"
+    },
+    {
+        id: '6',
+        name: 'Chess',
+        category: 'Board Games Equipment',
+        description: 'Our chess boards are made from a variety of materials such as wood, marble, and metal, ensuring they are both durable and aesthetically pleasing. We also offer a variety of sizes and styles, from portable travel boards to large, decorative boards for display.Our boards are designed with precision and attention to detail, ensuring they meet the highest standards for quality and functionality. Whether you are a beginner or an experienced player, our chess boards are sure to provide an enjoyable and challenging game experience.',
+        quantity: "3",
+        image:"https://previews.123rf.com/images/sudowoodo/sudowoodo1901/sudowoodo190100027/121240623-board-game-pieces-set-in-cute-hand-drawn-cartoon-style-different-markers-playing-cards-and-dice-isol.jpg"
+    },
+    {
+        id: '7',
+        name: 'Sequence',
+        category: 'Board Games Equipment',
+        description: 'We offer a wide range of sequence boards, perfect for game nights, parties, and family gatherings.Our sequence boards are made from durable materials such as wood, plastic, and cardboard, ensuring they can withstand the wear and tear of regular use. We also offer a variety of sizes and styles, from compact travel boards to large, foldable boards for easy storage.',
+        quantity:"2",
+        image:"https://previews.123rf.com/images/sudowoodo/sudowoodo1901/sudowoodo190100027/121240623-board-game-pieces-set-in-cute-hand-drawn-cartoon-style-different-markers-playing-cards-and-dice-isol.jpg"
+    },
+    {
+        id: '8',
+        name: 'Snake and Ladders',
+        category: 'Board Games Equipment',
+        description: 'Our Snake and Ladders boards are made from durable materials such as cardboard, plastic, and wood, ensuring they can withstand the wear and tear of regular use. We also offer a variety of sizes and styles, from compact travel boards to large, foldable boards for easy storage.Our boards are designed with precision and attention to detail, ensuring they meet the highest standards for quality and functionality. Whether you are a beginner or an experienced player, our Snake and Ladders boards are sure to provide an enjoyable and exciting game experience.',
+        quantity:"5",
+        image:"https://previews.123rf.com/images/sudowoodo/sudowoodo1901/sudowoodo190100027/121240623-board-game-pieces-set-in-cute-hand-drawn-cartoon-style-different-markers-playing-cards-and-dice-isol.jpg"
+    },
+    {
+        id: '9',
+        name: 'Monopoly',
+        category: 'Board Games Equipment',
+        description: 'Our Monopoly games are made from durable materials such as cardboard and plastic, ensuring they can withstand the wear and tear of regular use. We also offer a variety of editions and themes, from classic editions to special collectors editions featuring popular franchises such as Star Wars and Marvel. Our games are designed with precision and attention to detail, ensuring they meet the highest standards for quality and functionality.',
+        quantity:"7",
+        image:"https://previews.123rf.com/images/sudowoodo/sudowoodo1901/sudowoodo190100027/121240623-board-game-pieces-set-in-cute-hand-drawn-cartoon-style-different-markers-playing-cards-and-dice-isol.jpg"
+    },
+    {
+        id: '10',
+        name: 'Connect 4',
+        category: 'Board Games Equipment',
+        description: ' We offer a wide range of Connect 4 games, perfect for game nights, parties, and family gatherings. Our Connect 4 games are made from durable materials such as plastic and wood, ensuring they can withstand the wear and tear of regular use. We also offer a variety of sizes and styles, from compact travel games to large, tabletop games for more players. Our games are designed with precision and attention to detail, ensuring they meet the highest standards for quality and functionality. Whether you are a beginner or an experienced player, our Connect 4 games are sure to provide an enjoyable and exciting game experience.',
+        quantity:"4",
+        image:"https://previews.123rf.com/images/sudowoodo/sudowoodo1901/sudowoodo190100027/121240623-board-game-pieces-set-in-cute-hand-drawn-cartoon-style-different-markers-playing-cards-and-dice-isol.jpg"
+    },
+]);

@@ -1,0 +1,120 @@
+<%- include('../partials/header.ejs') %>
+<div id = "displayFlex">
+    <div class="card">
+        <div class="container">
+    
+           
+    <h2><%= equipment.name %></h2>
+    <img  id="sportsimage" src="<%= equipment.image %>" alt="Logo"><br>
+              
+    
+             
+</div>
+</div>
+<div class="card">
+    <div class="container">
+    <form>
+            
+           <h4>Equipment Category</h4>
+           <p><%= equipment.category %></p>
+           <h4>Description</h4>
+           <p><%= equipment.description %></p>
+           <h4>Quantity</h4>
+           <p><%= equipment.quantity %></p>
+           <h4>Status</h4>
+           <p><%= equipment.status %></p>
+           <% if (equipment.status != 'traded' && equipment.currentUser != equipment.author && !equipment.offeredByMe && equipment.myProducts.length > 0) { %>
+            <p id="offer-btn-parent">
+                <button class="editButton" type="button" 
+                    onclick="document.getElementById('offer-btn-parent').hidden = true;document.getElementById('offer-products').hidden = false;">Offer Trading</button>
+            </p>
+            <fieldset class="mt5" id="offer-products" hidden>
+                <legend>Select your product to exchange:</legend>
+                <select id="offerItem" name="offerItem">
+                    <% for (var i = 0, len = equipment.myProducts.length, product; i < len; i++) { 
+                        product = equipment.myProducts[i];
+
+                        if (i === 0 || product.category !== equipment.myProducts[i - 1].category) { %>
+                            <optgroup label="<%= product.category %>">
+                        <% } %>
+                        <option value="<%= product.id %>"><%= product.name %></option>
+                        <% if (i === len - 1 || product.category !== equipment.myProducts[i + 1].category) { %>
+                            </optgroup>
+                        <% } %>
+                    <% } %>
+                </select>
+                <p>
+                    <button class="editButton" type="submit" formmethod="POST" formaction="/trade/<%= equipment.id %>/offer">Submit</button>
+                    <button class="deleteButton" type="button"
+                        onclick="document.getElementById('offer-btn-parent').hidden = false; document.getElementById('offer-products').hidden = true;">Cancel</button>
+                </p>
+            </fieldset>
+           <% } %>
+           <% if (equipment.offers && equipment.offers.length > 0) { %>
+                <h4>Incoming Offers:</h4>
+                <table class="offerTable">
+                    <tr>
+                        <th>Product Offered</th>
+                        <th>Offered By</th>
+                        <th>Actions</th>
+                    </tr>
+                    <% equipment.offers.forEach(offer => { %>
+                        <tr>
+                            <td><a href="/trade/<%= offer.offer %>"><%= offer.offerName %></a></td>
+                            <td><%= offer.authorName %></td>
+                            <td>
+                                <% if (equipment.currentUser == offer.user) { %>
+                                    <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/offer/<%= equipment.id %>/<%= offer.id %>/reject">Withdraw offer</button>
+                                <% } else if (equipment.currentUser == equipment.author) { %>
+                                    <button class="editButton" type="submit" formmethod="POST" formaction="/trade/offer/<%= equipment.id %>/<%= offer.id %>/accept">Accept</button>
+                                    <button style="margin-top:5px;" class="deleteButton" type="submit" formmethod="POST" formaction="/trade/offer/<%= equipment.id %>/<%= offer.id %>/reject">Reject</button>
+                                <% } else { %>
+                                    N/A
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </table>
+            <% } %>
+            <% if (equipment.madeOffers && equipment.madeOffers.length > 0) { %>
+                <h4>Outgoing Offers:</h4>
+                <table class="offerTable">
+                    <tr>
+                        <th>Product for</th>
+                        <th>Product Owner</th>
+                        <th>Actions</th>
+                    </tr>
+                    <% equipment.madeOffers.forEach(offer => { %>
+                        <tr>
+                            <td><a href="/trade/<%= offer.trade %>"><%= offer.tradeName %></a></td>
+                            <td><%= offer.tradeOwnerName %></td>
+                            <td>
+                                <% if (equipment.currentUser == offer.user) { %>
+                                    <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/offer/<%= equipment.id %>/<%= offer.id %>/reject">Withdraw offer</button>
+                                <% } else if (equipment.currentUser == equipment.author) { %>
+                                    <button class="editButton" type="submit" formmethod="POST" formaction="/trade/offer/<%= equipment.id %>/<%= offer.id %>/accept">Accept</button>
+                                    <button style="margin-top:5px;" class="deleteButton" type="submit" formmethod="POST" formaction="/trade/offer/<%= equipment.id %>/<%= offer.id %>/reject">Reject</button>
+                                <% } else { %>
+                                    N/A
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </table>
+            <% } %>
+            <% if (user == equipment.author._id) { %> 
+                <p>
+                    <button class="editButton" type="submit" formmethod="GET" formaction="/trade/<%= equipment.id %>/edit">Edit</button>
+                    <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/<%= equipment.id %>?_method=DELETE">Delete</button>
+                </p>
+            <% } %>
+            <% if (equipment.watchedByMeId) { %>
+                <button class="deleteButton" type="submit" formmethod="POST" formaction="/trade/<%= equipment.watchedByMeId %>/watch/<%= equipment.id %>?_method=DELETE">Unwatch</button>
+            <% } else { %>
+                <button class="editButton" type="submit" formmethod="POST" formaction="/trade/<%= equipment.id %>/watch">Watch</button>
+            <% } %>
+        </form>
+     </div>
+     </div>
+     </div>
+<%- include('../partials/footer.ejs') %>
